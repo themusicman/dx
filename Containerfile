@@ -23,12 +23,3 @@ RUN wget https://starship.rs/install.sh && chmod +x install.sh && ./install.sh -
 
 # install cosign
 COPY --from=cosign-bin /ko-app/cosign /usr/local/bin/cosign
-
-# provider some convenience links to the host
-RUN   ln -fs /bin/sh /usr/bin/sh && \
-      ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/docker && \
-      ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/flatpak && \ 
-      ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/podman && \
-      ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/rpm-ostree && \
-      ln -fs /usr/bin/distrobox-host-exec /usr/local/bin/transactional-update
-     
